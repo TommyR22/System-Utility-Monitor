@@ -23,7 +23,6 @@ import { resolve } from "path";
 const win = new QMainWindow();
 win.setWindowTitle('Reply');
 win.setFixedSize(450, 435) // width, height
-//win.setWindowIcon(new QIcon(resolve(__dirname, "./nodegui.png")));
 
 // ---------------------------------------------------
 // QWidget = <div> with 'Flexbox' layout - ROOT
@@ -201,7 +200,7 @@ containerLayout.addWidget(button);
 // ---------------------------------------------------
 // Event handling
 // ---------------------------------------------------
-button.addEventListener(QPushButtonEvents.clicked, () => {
+button.addEventListener("clicked", () => {
     getSystemData().then((data) => {
 		console.log(data);
 		label_subtitle.setText(data.staticDetails.platform);
@@ -252,6 +251,7 @@ const rootStyleSheet = `
   #container__boxes {
 	flex-direction: row;
 	padding-top: 15px;
+	justify-content: space-between;
   }
   #container2__boxes {
 	flex-direction: row;
@@ -263,7 +263,7 @@ const rootStyleSheet = `
 	  background-color: #d0e420;
 	  border-radius: 5px;
 	  color: black;
-	  flex: 1;
+	  flex:1;
 	  margin-right: 5px;
   }
   #box2 {
@@ -271,7 +271,7 @@ const rootStyleSheet = `
 	  background-color: #ffbf00;
 	  border-radius: 5px;
 	  color: black;
-	  flex: 1;
+	  flex:1;
 	  padding: 10px;
   }
   #box3 {
